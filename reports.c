@@ -3,9 +3,9 @@
 #include "reports.h"
 
 void displayEmployeeReport(void) {
-    // Array of sample salaries (representing shared data)
+    
     float salaries[5] = {18500.00f, 22000.50f, 12000.00f, 42000.00f, 8500.00f};
-    int count = 5; // Array size
+    int count = 5;
     
     float total = 0.0f;
     float highest = salaries[0];
@@ -75,9 +75,8 @@ void displaySupplierReport(void) {
     }
     printf("----------------------------------------\n");
     
-    // Simple supplier search using string comparison
     printf("Enter supplier name to verify: ");
-    scanf(" %[^\n]", search); // Reads line including spaces
+    scanf(" %[^\n]", search);
     
     for (int i = 0; i < 3; i++) {
         if (strcmp(supplierNames[i], search) == 0) {
