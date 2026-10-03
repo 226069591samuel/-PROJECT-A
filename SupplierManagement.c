@@ -1,77 +1,75 @@
 #include <stdio.h>
 #include <string.h>
+#include "SupplierManagement.h"
 
-int main()
+struct Supplier suppliers[MAX];
+int supplierCount = 0;
+
+// Add Supplier
+
+void addSupplier()
 {
-    int supplierID[100];
-    char supplierName[100][50];
-    char supplierEmail[100][50];
-    char supplierTelephone[100][20];
-    char supplierLocation[100][50];
-
-    int numberOfSuppliers;
-    int i;
-    int found;
-    int supplier1;
-    int supplier2;
-    char search[50];
-
-    // Add Supplier
-
     printf("Enter number of suppliers: ");
-    scanf("%d", &numberOfSuppliers);
+    scanf("%d", &supplierCount);
 
-    for (i = 0; i < numberOfSuppliers; i++)
+    for (int i = 0; i < supplierCount; i++)
     {
         printf("\nEnter details for supplier %d\n", i + 1);
 
         printf("Enter supplier ID: ");
-        scanf("%d", &supplierID[i]);
+        scanf("%d", &suppliers[i].supplierID);
 
         printf("Enter supplier name: ");
-        scanf("%s", supplierName[i]);
+        scanf("%s", suppliers[i].supplierName);
 
         printf("Enter supplier email: ");
-        scanf("%s", supplierEmail[i]);
+        scanf("%s", suppliers[i].supplierEmail);
 
         printf("Enter supplier telephone: ");
-        scanf("%s", supplierTelephone[i]);
+        scanf("%s", suppliers[i].supplierTelephone);
 
         printf("Enter supplier location: ");
-        scanf("%s", supplierLocation[i]);
+        scanf("%s", suppliers[i].supplierLocation);
     }
+}
 
-    // Display Suppliers
+// Display Suppliers
 
+void displaySuppliers()
+{
     printf("\n--- Supplier Information ---\n");
 
-    for (i = 0; i < numberOfSuppliers; i++)
+    for (int i = 0; i < supplierCount; i++)
     {
         printf("\nSupplier %d\n", i + 1);
-        printf("Supplier ID: %d\n", supplierID[i]);
-        printf("Supplier Name: %s\n", supplierName[i]);
-        printf("Supplier Email: %s\n", supplierEmail[i]);
-        printf("Supplier Telephone: %s\n", supplierTelephone[i]);
-        printf("Supplier Location: %s\n", supplierLocation[i]);
+        printf("Supplier ID: %d\n", suppliers[i].supplierID);
+        printf("Supplier Name: %s\n", suppliers[i].supplierName);
+        printf("Supplier Email: %s\n", suppliers[i].supplierEmail);
+        printf("Supplier Telephone: %s\n", suppliers[i].supplierTelephone);
+        printf("Supplier Location: %s\n", suppliers[i].supplierLocation);
     }
+}
 
-    // Search Supplier
+// Search Supplier
 
-    found = 0;
+void searchSupplier()
+{
+    int found = 0;
+    char search[50];
 
     printf("\nEnter supplier name to search: ");
     scanf("%s", search);
 
-    for (i = 0; i < numberOfSuppliers; i++)
+    for (int i = 0; i < supplierCount; i++)
     {
-        if (strcmp(supplierName[i], search) == 0)
+        if (strcmp(suppliers[i].supplierName, search) == 0)
         {
             printf("\nSupplier found\n");
-            printf("Supplier ID: %d\n", supplierID[i]);
-            printf("Supplier Name: %s\n", supplierName[i]);
-            printf("Supplier Email: %s\n", supplierEmail[i]);
-            printf("Supplier Telephone: %s\n", supplierTelephone[i]);
-            printf("Supplier Location: %s\n", supplierLocation[i]);
+            printf("Supplier ID: %d\n", suppliers[i].supplierID);
+            printf("Supplier Name: %s\n", suppliers[i].supplierName);
+            printf("Supplier Email: %s\n", suppliers[i].supplierEmail);
+            printf("Supplier Telephone: %s\n", suppliers[i].supplierTelephone);
+            printf("Supplier Location: %s\n", suppliers[i].supplierLocation);
 
             found = 1;
         }
@@ -81,10 +79,16 @@ int main()
     {
         printf("\nSupplier not found.\n");
     }
+}
 
-    // Compare Supplier Information
+// Compare Supplier Information
 
-    if (numberOfSuppliers >= 2)
+void compareSuppliers()
+{
+    int supplier1;
+    int supplier2;
+
+    if (supplierCount >= 2)
     {
         printf("\n--- Compare Supplier Information ---\n");
 
@@ -94,8 +98,8 @@ int main()
         printf("Enter second supplier number: ");
         scanf("%d", &supplier2);
 
-        if (supplier1 < 1 || supplier1 > numberOfSuppliers ||
-            supplier2 < 1 || supplier2 > numberOfSuppliers)
+        if (supplier1 < 1 || supplier1 > supplierCount ||
+            supplier2 < 1 || supplier2 > supplierCount)
         {
             printf("\nInvalid supplier number.\n");
         }
@@ -108,8 +112,8 @@ int main()
             printf("\nComparing Supplier %d and Supplier %d\n",
                    supplier1, supplier2);
 
-            if (strcmp(supplierName[supplier1 - 1],
-                       supplierName[supplier2 - 1]) == 0)
+            if (strcmp(suppliers[supplier1 - 1].supplierName,
+                       suppliers[supplier2 - 1].supplierName) == 0)
             {
                 printf("Supplier names are the same.\n");
             }
@@ -118,8 +122,8 @@ int main()
                 printf("Supplier names are different.\n");
             }
 
-            if (strcmp(supplierEmail[supplier1 - 1],
-                       supplierEmail[supplier2 - 1]) == 0)
+            if (strcmp(suppliers[supplier1 - 1].supplierEmail,
+                       suppliers[supplier2 - 1].supplierEmail) == 0)
             {
                 printf("Supplier emails are the same.\n");
             }
@@ -128,8 +132,8 @@ int main()
                 printf("Supplier emails are different.\n");
             }
 
-            if (strcmp(supplierTelephone[supplier1 - 1],
-                       supplierTelephone[supplier2 - 1]) == 0)
+            if (strcmp(suppliers[supplier1 - 1].supplierTelephone,
+                       suppliers[supplier2 - 1].supplierTelephone) == 0)
             {
                 printf("Supplier telephone numbers are the same.\n");
             }
@@ -138,8 +142,8 @@ int main()
                 printf("Supplier telephone numbers are different.\n");
             }
 
-            if (strcmp(supplierLocation[supplier1 - 1],
-                       supplierLocation[supplier2 - 1]) == 0)
+            if (strcmp(suppliers[supplier1 - 1].supplierLocation,
+                       suppliers[supplier2 - 1].supplierLocation) == 0)
             {
                 printf("Supplier locations are the same.\n");
             }
@@ -153,6 +157,4 @@ int main()
     {
         printf("\nAt least two suppliers are needed for comparison.\n");
     }
-
-    return 0;
 }
