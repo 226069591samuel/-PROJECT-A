@@ -58,7 +58,7 @@ void displayBudgetReport(void) {
 }
 
 void displaySupplierReport(void) {
-    // 2D Array to store supplier names and towns
+
     char supplierNames[3][50] = {"ABC Office Supplies", "Namibia Stationers", "Tech Suppliers"};
     char supplierTowns[3][30] = {"Windhoek", "Walvis Bay", "Swakopmund"};
     
