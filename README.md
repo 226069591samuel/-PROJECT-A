@@ -90,6 +90,21 @@ The validation checks in my module were confirmed in the code, including the dep
 
 --------------------------------------------------------------------
 
+Name: Evalisa Haindongo 
+Student number:226171280
+Group: Project A
+My contribution: Functions, Integration and Validation 
+
+My role focused on ensuring that all modules of the Municipal Financial Management System — Employee, Budget, Supplier, Asset, and Reports — were properly connected and worked together as one complete program. I developed the main system loop and menu navigation, making sure the user could easily move between different parts of the application.
+
+I created several key functions, including displayMenu() to show the main menu, validatePositive() to prevent negative values for salaries and budgets, and validateMenuChoice() to handle invalid menu selections. I also implemented the runSystem() function, which integrates all modules into a single workflow using a switch-case structure. This allowed the system to run smoothly and ensured that invalid inputs did not cause crashes but instead prompted the user to re-enter correct values. My main() function served as the entry point, calling runSystem() to start the program.
+
+In addition to integration, I focused on validation. I made sure that negative salaries and budgets were not accepted, invalid menu choices were handled gracefully, and reusable validation functions were available for other modules. This improved the reliability and user-friendliness of the system. I also contributed to the GitHub repository by uploading and maintaining the main.c and main.h files, coordinating integration commits, and assisting teammates with debugging and validation before final integration.
+
+Finally, I performed testing to verify that the main menu navigation worked correctly, input validation was effective, and all modules executed properly when integrated. My contribution ensured that the Municipal Financial Management System was functional, stable, and easy to use. By organizing the program into logical functions and implementing validation, I helped build a strong foundation for Project B and demonstrated my understanding of C programming concepts.
+
+--------------------------------------------------------------------
+
 STUDENT NAME: Samuel
 STUDENT NUMBER: 226069591
 GROUP: Project A
