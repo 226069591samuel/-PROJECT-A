@@ -134,9 +134,9 @@ This project is a C-based command-line application built to help local municipal
 | `main.c` | Program menu, user input handling, and module routing | Samuel |
 | `reports.c` / `reports.h` | Generating financial and operational summary reports | Malakia |
 | `search.c` / `search.h` | Searching records across different modules | Elia |
-| `Budget.c` / `Budget.h` | Tracking municipal budgets and departmental expenditure | Paulina |
-| `assets.c` / `assets.h` | Managing municipal assets and equipment inventory | Ester |
-| `employees.c` / `employees.h` | Managing staff records and departmental details | Elina |
+| `Budget.c` / `Budget.h` | Tracking municipal budgets and departmental expenditure | Elina |
+| `assets.c` / `assets.h` | Managing municipal assets and equipment inventory | Samuel |
+| `employees.c` / `employees.h` | Managing staff records and departmental details | Ester |
 
 ---
 
