@@ -46,4 +46,5 @@ for (int i = 0; i < numberOfDepartments; i++) {
     } else {
         printf("Status: Budget Exceeded\n");
     }
+    return 0;
 }
