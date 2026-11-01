@@ -21,6 +21,12 @@
             fflush(stdout);
             scanf(" %49[^\n]", employees[employeeCount].name);
 
+            //Adding strlen so name cannot be zero
+            if (strlen(employees[employeeCount].name) == 0) {
+            printf("Name cannot be empty.\n");
+            return;
+            }
+
             printf("Enter Your Department: ");
             fflush(stdout);
             scanf(" %49[^\n]", employees[employeeCount].department);
