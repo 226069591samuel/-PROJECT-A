@@ -35,6 +35,12 @@
             fflush(stdout);
             scanf("%f", &employees[employeeCount].basicSalary);
 
+            //NO NEGATIVE INTAKE OF SALARY
+            if (employees[employeeCount].basicSalary < 0) {
+            printf("Salary Cannot be Negative.\n");
+            return;
+            }
+
             printf("Enter Housing Allowance: ");
             fflush(stdout);
             scanf("%f", &employees[employeeCount].housing);
